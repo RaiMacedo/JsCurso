@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./imovel.js"></script>
+    <script src="./app.js"></script>
+    <script src="./main.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="cadastro" onsubmit="app.cadastrarResidencia()" >
+        <h2>Cadastro da residencia</h2>
+        <hr/>
+        <div id="divTipo">
+            <h3 for="tipo">Tipo da residencia:</h3>
+            <select name="tipoResidencia" id="tipoResidencia">
+                <option value="casa">Casa</option>
+                <option value="apartamento">Apartamento</option>
+            </select>
+          
+        </div>
+
+
+        <br>
+        
+        
+        <div id="divArea">
+            <h3 for="area">Área da residencia:</h3>
+            <input type="number" name="area" id="area" placeholder="Área" step="5">
+        </div>
+        <br>
+        
+        
+        <div id="divSituacao">
+            <h3 for="alugado">Situação do imovel:</h3>
+            
+            <label for="alugado">Alugado</label>
+            <input type="checkbox" name="alugado"> 
+
+        </div>
+        <br>
+        <div id="divButtons">
+            <button type="submit">Cadastrar</button>
+            <button type="button" onclick="app.limparFormulario()">Limpar</button>
+
+        </div>
+        <br>
+        <hr/>
+    </form>
+    <ul id="listaCasas"></ul>
+</body>
+</html>
