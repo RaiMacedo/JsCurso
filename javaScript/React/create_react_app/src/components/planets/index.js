@@ -2,7 +2,12 @@ import React, {Fragment} from 'react'
 import Planet from './planet';
 
 
-async
+async function getPlanet(){
+    let response = await fetch('http://localhost:3000/api/planets.json')
+    let data = await response.json()
+    return data
+
+}
 
 class Planets extends React.Component {
 
@@ -14,7 +19,11 @@ class Planets extends React.Component {
     }
 
     componentDidMount(){
-
+        getPlanet().then(data => {
+            this.setState(state => ({
+                planets: data['planets']
+            }))
+        })
     }
 
     removelast = () => {
@@ -41,14 +50,15 @@ class Planets extends React.Component {
                 <button onClick={this.removelast}>Remove Last</button>
                 <button onClick={this.duplicateLastPlanet}>Duplicate Last</button>
                 <hr/>
-                {this.state.planets.map((planet) =>
+                {this.state.planets.map((planet, index) =>
                     <Planet name={planet.name}
-                    descriptionWLink={planet.descriptionWLink}
-                    href={planet.href}
-                    aDescription={planet.aDescription}
+                    description={planet.description}
+                    link={planet.link}
                     img_url={planet.img_url}
                     titleUnderline={planet.titleUnderline}
                     gray={planet.gray}
+                    id={planet.id}
+                    key={index}
                     />
                     
                 )}

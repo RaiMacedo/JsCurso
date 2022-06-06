@@ -2,22 +2,22 @@ import React, {Fragment} from 'react';
 
 const DescriptionWLink = (props) => {
 
-    if(!props.descriptionWLink){
+    if(!props.description){
         return null;
     }
 
-    if(props.href){
+    if(props.link){
         return (
             <Fragment>
-                <p>{props.descriptionWLink}</p>
-                <a target="_blank" href={props.href}>{props.aDescription}</a>
+                <p>{props.description}</p>
+                <a target="_blank" href={props.link}>{props.link}</a>
                 <br/>
             </Fragment>
         );
     }else{
         return(
             <Fragment>
-                <p><u>{props.descriptionWLink}</u></p>
+                <p><u>{props.description}</u></p>
                 <br/>
             </Fragment>    
         )
