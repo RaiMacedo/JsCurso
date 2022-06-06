@@ -1,2 +1,2 @@
-Tentando salvar meu projeto no gitHub e dar um pull
+Tentando salvar meu projeto no gitHub e dar um push
 
